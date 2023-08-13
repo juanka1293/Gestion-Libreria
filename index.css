@@ -2,3 +2,7 @@
     background-color: #4CAF50;
     color: white;
   }
+  .list-group-item.inactive {
+    background-color: #FF5733;
+    color: white;
+  }
