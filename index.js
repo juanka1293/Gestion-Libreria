@@ -29,5 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
         editingUserId = null;
         cancelButton.style.display = "none";
     });
+    function addUser(username, status, name) {
+        const user = {
+            id: new Date().getTime(),
+            name: name,
+            username: username,
+            status: status
+        };
 
+        users.push(user);
+        renderUsers();
+    }
 });
