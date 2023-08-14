@@ -54,4 +54,40 @@ document.addEventListener("DOMContentLoaded", function () {
         users = users.filter(user => user.id !== id);
         renderUsers();
     }
+    function renderUsers() {
+        userList.innerHTML = "";
+
+        users.forEach(user => {
+            const listItem = document.createElement("li");
+            listItem.className = "list-group-item";
+            listItem.textContent = user.username;
+            listItem.textContent = user.name;
+
+            if (user.status === "activo") {
+                listItem.classList.add("active");
+            } else {
+                listItem.classList.add("inactive");
+            }
+
+            const editButton = document.createElement("button");
+            editButton.className = "ml-2 btn btn-sm btn-primary mr-2";
+            editButton.textContent = "Editar";
+            editButton.addEventListener("click", function () {
+                editUser(user);
+            });
+
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "ml-2 btn btn-sm btn-danger";
+            deleteButton.textContent = "Eliminar";
+            deleteButton.addEventListener("click", function () {
+                deleteUser(user.id);
+            });
+
+            listItem.appendChild(editButton);
+            listItem.appendChild(deleteButton);
+
+            userList.appendChild(listItem);
+        });
+    }
+
 });
