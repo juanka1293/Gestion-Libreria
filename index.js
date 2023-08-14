@@ -24,4 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
         editingUserId = null;
         cancelButton.style.display = "none";
     });
+    cancelButton.addEventListener("click", function () { 
+        userForm.reset();
+        editingUserId = null;
+        cancelButton.style.display = "none";
+    });
+
 });
