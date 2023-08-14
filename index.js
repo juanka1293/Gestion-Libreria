@@ -40,4 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
         users.push(user);
         renderUsers();
     }
+    function updateUser(id, username, status, name) {
+        const userIndex = users.findIndex(user => user.id === id);
+
+        if (userIndex !== -1) {
+            users[userIndex].username = username;
+            users[userIndex].status = status;
+            users[userIndex].name = name;
+            renderUsers();
+        }
+    }
 });
