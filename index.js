@@ -50,4 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
             renderUsers();
         }
     }
+    function deleteUser(id) {
+        users = users.filter(user => user.id !== id);
+        renderUsers();
+    }
 });
