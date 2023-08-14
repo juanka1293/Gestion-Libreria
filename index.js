@@ -89,5 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
             userList.appendChild(listItem);
         });
     }
-
+    function editUser(user) {
+        document.getElementById("user-id").value = user.id;
+        document.getElementById("username").value = user.username;
+        document.getElementById("status").value = user.status;
+        document.getElementById("name").value = user.name;
+        cancelButton.style.display = "inline";
+        editingUserId = user.id;
+    }
 });
