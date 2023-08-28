@@ -1,0 +1,27 @@
+.magazine {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .book {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 200px;
+  }
+  
+  .book img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .book h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .book p {
+    font-size: 1rem;
+    color: #888;
+  }
+  
