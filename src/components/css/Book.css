@@ -1,0 +1,14 @@
+/* src/components/Book.css */
+.book {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .book img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  
