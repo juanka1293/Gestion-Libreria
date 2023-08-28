@@ -11,7 +11,19 @@ const Login = () => {
 
   const Auth = async (e) => {
     e.preventDefault();
-   
+    try {
+      const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+      const Userlogin = loginUser(response.data, email, password)
+      if(Userlogin!= null){
+      navigate("/dashboard");
+      }else{
+        alert("Credenciales invalidas")
+      }
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.message);
+      }
+    }
   };
 
   function loginUser(usersList, email, password) {
