@@ -7,7 +7,15 @@ const Dashboard = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-   
+    const fetchBooks = async () => {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/photos');
+        setBooks(response.data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+      }
+    };
+
     fetchBooks();
   }, []);
 
